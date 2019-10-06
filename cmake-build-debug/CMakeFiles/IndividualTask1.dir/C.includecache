@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/ProjectsFolder/IndividualTask1/main.c
+malloc.h
+-
+stdbool.h
+-
+string.h
+-
+stdio.h
+-
+
