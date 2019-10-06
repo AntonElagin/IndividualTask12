@@ -1,0 +1,3 @@
+/home/anton/ProjectsFolder/IndividualTask1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/anton/ProjectsFolder/IndividualTask1/cmake-build-debug/CMakeFiles/IndividualTask1.dir
+/home/anton/ProjectsFolder/IndividualTask1/cmake-build-debug/CMakeFiles/edit_cache.dir
