@@ -11,7 +11,7 @@
 
 #include <malloc.h>
 #include <stdbool.h>
-#include <string.h>s
+#include <string.h>
 #include <stdio.h>
 
 struct Airplane {
@@ -23,15 +23,13 @@ struct Airplane {
 };
 
 bool is_less(const struct Airplane *l, const struct Airplane *r) {
-  if (strcmp(l->brand, r->brand))
+  if (!strcmp(l->brand, r->brand))
     return l->range < r->range;
   else
-    return strcmp(l->brand, r->brand);
-  /* if (strcmp(l.brand, r.brand) < 0)
-  return true;
-else
-  return false;
-*/
+    if (strcmp(l->brand, r->brand) < 0)
+      return true;
+    else
+      return false;
 }
 
 void merge_sort(struct Airplane *array, size_t size,
@@ -81,19 +79,20 @@ void merge_sort(struct Airplane *array, size_t size,
 }
 
 int main() {
-  printf("Hello, World!\n");
+  printf("Input size:\n");
   int size;
-  scanf("Write size: %d", &size);
+  scanf("%d", &size);
   struct Airplane *ar =
       (struct Airplane *)malloc(size * sizeof(struct Airplane));
 
   for (size_t i = 0; i < size; i++) {
-    scanf("%20s %20s %20s %d %d", ar[i].brand, &ar[i].model, &ar[i].appointment,
+    //printf("Iput %d-th Airplane:", size);
+    scanf("%20s %20s %20s %d %d", ar[i].brand, ar[i].model, ar[i].appointment,
           &ar[i].crew_number, &ar[i].range);
   }
 
   merge_sort(ar, size, is_less);
-
+  printf("Input data:\n");
   for (size_t i = 0; i < size; i++) {
     printf("%s %s %s %d %d\n", ar[i].brand, ar[i].model, ar[i].appointment,
            ar[i].crew_number, ar[i].range);
